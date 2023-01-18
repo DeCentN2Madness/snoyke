@@ -1,0 +1,38 @@
+cabal-version:      3.0
+name:               snoyke
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            MIT
+license-file:       LICENSE
+author:             Ian Burzynski
+maintainer:         23251244+iburzynski@users.noreply.github.com
+-- copyright:
+category:           Game
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options:        -Wall
+
+executable snoyke
+    import:             warnings
+    main-is:            Main.hs
+    other-modules:      Data
+                      , Events
+                      , Init
+                      , Render
+                      , Util
+    -- other-extensions:
+    default-extensions: FlexibleContexts
+                      , NoImplicitPrelude
+                      , OverloadedStrings
+    build-depends:      base ^>=4.16.3.0
+                      , ansi-terminal
+                      , mtl
+                      , random
+                      , rio
+                      , stm
+    hs-source-dirs:     app
+    default-language:   Haskell2010
