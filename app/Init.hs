@@ -10,10 +10,10 @@ import Data
 
 initGame :: IO Game
 initGame = do
-  s@(sy, sx)  <- liftIO $ fromJust <$> getTerminalSize
+  s@(sy, sx)  <- fromJust <$> getTerminalSize
   -- generate pair of random integers for positioning food item
-  fy <- liftIO randomIO
-  fx <- liftIO randomIO
+  fy <- randomIO
+  fx <- randomIO
   let
     -- determine initial food coordinates within screen size boundaries
     fp = (fy `mod` sy, fx `mod` sx)
